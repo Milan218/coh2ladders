@@ -19,3 +19,23 @@ describe("getIntelBulletinRace", () => {
     expect(getIntelBulletinRace(11111111)).toStrictEqual([]);
   });
 });
+
+describe("getCommanderRace", () => {
+  test("Returns correct race for commander ID", async () => {
+    expect(getCommanderRace(347076)).toBe("wgerman");
+  });
+
+  test("Returns unknown race for unknown ID", async () => {
+    expect(getCommanderRace(7777777777)).toBe("unknown");
+  });
+});
+
+describe("getIntelBulletinRace", () => {
+  test("Returns correct race array for bulletin ID", async () => {
+    expect(getIntelBulletinRace(259252)).toStrictEqual(["usf", "wgerman"]);
+  });
+
+  test("Returns unknown race for unknown ID", async () => {
+    expect(getIntelBulletinRace(2020202020202)).toStrictEqual([]);
+  });
+});
